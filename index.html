@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steven Fitzgerald</title>
+    <link rel="stylesheet" href="/stevenfitzdotcom/resources/css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/55747b442a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Steven Fitzgerald</h1>
+        <p class="tagline">Software Designer & Developer</p>
+        <button id="theme-toggle">Dark</button>
+    </header>
+
+    <!--
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    -->
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Lorem ipsum dolor sit amet adipiscing bibendum sem orci tempus aliquet gravida, orci amet iaculis aptent
+                blandit quam accumsan donec in facilisis, cursus ante curabitur aliquet condimentum tincidunt facilisis
+                non cubilia lorem et pretium aliquam phasellus ipsum metus quisque auctor tristique donec nibh, praesent
+                congue ultricies aenean ornare ligula sagittis proin sed vestibulum purus tempus aenean neque aliquam
+                curae vivamus purus egestas ligula tincidunt nullam.</p>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+
+            <div class="project">
+                <h3>stevenfitzdotcom</h3>
+                <p>I built this website myself, check out the <a href="https://github.com/stevenfitz77/stevenfitz.com" target="_blank">source code</a>.</p>
+            </div>
+
+            <div class="project">
+                <h3>Crazy Massive Roundball</h3>
+                <p>In <a href="https://github.com/stevenfitz77/crazymassiveroundball" target="_blank">progress</a>.</p>
+            </div>
+        </section>
+
+        <section id="photography">
+            <h2>Photography</h2>
+
+            <div class="photo-gallery">
+                <img src="/stevenfitzdotcom/resources/images/photo1.jpg" alt="Photo 1">
+                <img src="/stevenfitzdotcom/resources/images/photo2.jpg" alt="Photo 2">
+                <img src="/stevenfitzdotcom/resources/images/photo3.jpg" alt="Photo 3">
+            </div>
+
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: your.email@example.com</p>
+        </section>
+    </main>
+
+    
+    <footer>
+        <p></p>
+    </footer>
+    
+
+    <script>
+        const toggleBtn = document.getElementById("theme-toggle");
+        const body = document.body;
+
+        // Load saved theme
+        if (localStorage.getItem("theme") === "dark") {
+            body.classList.add("dark");
+            toggleBtn.innerHTML = "<i class=\"fa-solid fa-sun\"></i>";
+        }
+
+        toggleBtn.addEventListener("click", () => {
+            body.classList.toggle("dark");
+
+            if (body.classList.contains("dark")) {
+                toggleBtn.innerHTML = "<i class=\"fa-solid fa-sun\"></i>";
+                localStorage.setItem("theme", "dark");
+            } else {
+                toggleBtn.innerHTML = "<i class=\"fa-solid fa-moon\"></i>";
+                localStorage.setItem("theme", "light");
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
