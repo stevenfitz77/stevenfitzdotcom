@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="user-preference">
 
 <head>
     <meta charset="UTF-8">
@@ -9,10 +9,10 @@
         (function() {
             if (localStorage.getItem('theme') === 'dark') {
               document.documentElement.classList.add('dark');
-            }
+            } 
         })();
     </script>
-     <link rel="stylesheet" href="/resources/css/styles.css">
+    <link rel="stylesheet" href="/resources/css/styles.css">
 </head>
 
 <body>
@@ -126,6 +126,7 @@
         } else if (prefersDark) {
             html.setAttribute('data-theme', 'dark');
         }
+
     </script>
 
 </body>
