@@ -453,15 +453,48 @@ main {
 
 /*Photography Page*/
 
-
-.instagram-widget {
-    margin-top: 40px;
-    padding: 20px;
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    background-color: var(--color-bg);
+.photo-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
 }
 
+.photo-list a img {
+    width: 95%;
+    height: auto;
+    transition: transform .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.photo-list a img:hover {
+    transform: scale(1.01);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.photo-description {
+    font-size: 14px;
+    color: var(--color-muted);
+    text-align: center;
+    padding-bottom: 48px
+}
+
+.photo-gallery h3 {
+    text-align: center;
+    padding-bottom: 16px;
+}
+
+.photo-gallery h3 a {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--color-link);
+    text-decoration: none;
+    transition: color .3s ease-in-out;
+}
+
+.photo-gallery h3 a:hover {
+    color: var(--color-link-hover);
+}
 
 /* Mobile Screens */
 @media (max-width: 480px) {
