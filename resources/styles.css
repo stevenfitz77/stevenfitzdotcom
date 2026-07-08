@@ -224,7 +224,6 @@ body {
     text-transform: uppercase;
     display: block;
     margin-bottom: 0.25rem;
-    text-decoration: none;
 }
 .contact-value {
     margin-bottom: 0.9rem;
@@ -240,6 +239,7 @@ body {
 .contact-value a:hover {
     color: var(--accent);
     border-color: var(--accent);
+    text-decoration: none;
 }
 
 @media (max-width: 1099px) {
