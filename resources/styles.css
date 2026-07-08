@@ -224,6 +224,7 @@ body {
     text-transform: uppercase;
     display: block;
     margin-bottom: 0.25rem;
+    text-decoration: none;
 }
 .contact-value {
     margin-bottom: 0.9rem;
