@@ -2,6 +2,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
     --bg: #fff3e6;
+    --bg-rgb: 255, 243, 230;
     --text: #2b1e13;
     --text-light: #5a4a3a;
     --accent: #f05a00;

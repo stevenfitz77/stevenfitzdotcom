@@ -8,8 +8,8 @@
         if (btn) {
             var icon = btn.querySelector('i');
             if (icon) {
-                icon.classList.toggle('fa-solid fa-moon', theme !== 'dark');
-                icon.classList.toggle('fa-solid fa-sun', theme === 'dark');
+                icon.classList.toggle('fa-moon', theme !== 'dark');
+                icon.classList.toggle('fa-sun', theme === 'dark');
             }
             btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
         }
