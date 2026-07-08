@@ -1,142 +1,100 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steven Fitzgerald</title>
+    <link rel="stylesheet" href="/resources/styles.css">
+    <script src="https://kit.fontawesome.com/55747b442a.js" crossorigin="anonymous"></script>
     <script>
-        (function() {
-            if (localStorage.getItem('theme') === 'dark') {
-              document.documentElement.setAttribute('data-theme', 'dark');
-            } 
+        (function () {
+            var stored = null;
+            try { stored = localStorage.getItem('theme'); } catch (e) {}
+            var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
         })();
     </script>
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/resources/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/resources/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/resources/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/resources/favicon/site.webmanifest">
-
-    <link rel="stylesheet" href="/resources/css/styles.css">
 </head>
-
 <body>
 
-    
-
-    <header class="site-header">
-
-        <div class="header-content">
-
-            <div class="site-title">
-                <a href="/">Steven Fitzgerald</a>
-            </div>
-
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="/" aria-current="page">Home</a></li>
-                    <li><a href="/projects">Projects</a></li>
-                    <li><a href="/photography">Photography</a></li>
-                    <li><a href="/resume">Resume</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                </ul>
+    <header class="navbar">
+        <div class="navbar-inner">
+            <a href="/index.html" class="navbar-logo">Steven Fitzgerald</a>
+            <nav class="navbar-links">
+                <a href="/index.html#projects-section">Projects</a>
+                <a href="/index.html#photography-section">Photography</a>
+                <button class="theme-toggle" aria-label="Toggle Dark Mode"><i class="fa-solid fa-moon"></i></button>
             </nav>
-
-            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M337.5-463Q311-498 289-537q-5 14-6.5 28.5T281-480q0 83 58 141t141 58q14 0 28.5-2t28.5-6q-39-22-74-48.5T396-396q-32-32-58.5-67ZM567-364.5Q630-328 702-308q-40 51-98 79.5T481-200q-117 0-198.5-81.5T201-480q0-65 28.5-123t79.5-98q20 72 56.5 135T453-452q51 51 114 87.5ZM743-380q-20-5-39.5-11T665-405q8-18 11.5-36.5T680-480q0-83-58.5-141.5T480-680q-20 0-38.5 3.5T405-665q-8-19-13.5-38T381-742q24-9 49-13.5t51-4.5q117 0 198.5 81.5T761-480q0 26-4.5 51T743-380ZM440-840v-120h80v120h-80Zm0 840v-120h80V0h-80Zm323-706-57-57 85-84 57 56-85 85ZM169-113l-57-56 85-85 57 57-85 84Zm671-327v-80h120v80H840ZM0-440v-80h120v80H0Zm791 328-85-85 57-57 84 85-56 57ZM197-706l-84-85 56-57 85 85-57 57Zm199 310Z"/></svg>
-            </button>
-
         </div>
-
     </header>
 
-    <main>
-        <div class="home">
+    <main class="site-content">
 
-            <section class="hero">
-                <h1 class="hero-headline">Hello! I'm Steven.</h1>
-                <div class="hero-subhead">
-                    <p>
-                        I'm currently working as a Data Operator for Major League Baseball. I use the league's proprietary software to track and record in-game events, which are then used for official statistics. I work in a fast-paced environment that requires consistent <em>accuracy</em> and <em>communication</em>.
-                    </p>
-                </div>
-            </section>
+        <!-- ===== SECTION 1: HERO + CONTACT ===== -->
+        <section class="site-section hero-section">
+            <div class="main-section">
+                <h1 class="mobile-headline">Hello, I'm Steven.</h1> <!-- Only visible on small screens -->
 
-            <section class="features">
-                <h2>What I'm Up To:</h2>
-                <ul class="features-list">
-                    <li>
-                        <article>
-                            <h3>
-                                <a href="/projects/stevenfitzdotcom/">stevenfitz.com</a>
-                            </h3>
-                            <time datetime="2026-04-13">April 13, 2026</time>
-                            <p>
-                                I'm currently building this website from scratch using HTML, CSS, and JavaScript to create a personal portfolio that showcases my software and photography work.
-                            </p>
-                        </article>
-                    </li>
-                    <li>
-                        <article>
-                            <h3>
-                                <a href="/projects/supermegabaseballdatabase/">Super Mega Baseball Database</a>
-                            </h3>
-                            <time datetime="2026-05-15">May 15, 2026</time>
-                            <p>
-                                I'm creating a comprehensive database of player statistics and information for the Super Mega Baseball video game series. The database will include player attributes and identifying information, to be used as a tool for in-game drafts and team management.
-                            </p>
-                        </article>
-                    </li>
-                </ul>
+                <div class="hero-content">
+                    <div class="paragraph-block">
+                        <p class="intro-headline">
+                            <span class="inline-greeting">Hello, I'm Steven.</span> <!-- Only visible on large screens -->
+                            I make software and sometimes I take pictures.
+                        </p>
+                        <p class="intro">I earned my B.S. in Computer Science from Syracuse University in the Spring of 2025. Through my studies I gained a
+                            passion for the creative process that goes into developing software. Currently, I work in data operations for Major
+                            League Baseball. I'm responsible for logging accurate real-time data based on in-game events, rulings from the
+                            official scorer, and notices from online support agents.
+                        </p>
+                        <p class="intro">When I'm not working, I really enjoy photography &lpar;especially of animals &lpar;especially birds&rpar;&rpar;.
+                            You can check out some of my favorite pictures I've taken on this site, and you can see more on instagram.
+                        </p>
+                    </div>
 
-                <p>
-                    <a href="/projects">View all projects &#8594;</a>
-                </p>
-            </section>
-
-        </div>
-    </main>
-
-    <footer>
-        <div class="site-footer">
-            <div class="footer-content">
-                <div class="footer-links">
-                    <a href="mailto:stevenfitzg@gmail.com">Email</a>
-                    <a href="https://www.linkedin.com/in/stevenafitzgerald/" target="_blank" rel="noopener">LinkedIn</a>
-                    <a href="https://www.github.com/stevenfitz77" target="_blank" rel="noopener">GitHub</a>
-                </div>
-                <div class="footer-copyright">
-                    <p>&copy; 2026 Steven Fitzgerald. All rights reserved.</p>
+                    <div class="contact-card">
+                        <p class="contact-label">Email</p>
+                        <p class="contact-value">stevenfitzg@gmail.com</p>
+                        <p class="contact-label">Elsewhere</p>
+                        <p class="contact-value"><a href="https://www.linkedin.com/in/stevenafitzgerald/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></p>
+                        <p class="contact-value"><a href="https://www.instagram.com/sfitzphotos/" target="_blank">Instagram</a></p>
+                        <p class="contact-value"><a href="https://github.com/stevenfitz77" target="_blank">GitHub</a></p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </section>
 
-    <script>
-        // Theme toggle functionality
-        const themeToggle = document.querySelector('[data-theme-toggle]');
-        const html = document.documentElement;
+        <!-- ===== SECTION 2: PROJECTS ===== -->
+        <section class="site-section projects-section" id="projects-section">
+            <div class="section-inner">
+                <p class="section-title">Projects</p>
+                <div class="projects-grid">
+                    <a href="/projects/super-mega-database.html" class="project-card">
+                        <p class="project-title">Super Mega Database</p>
+                        <p class="project-desc">Fullstack searchable and sortable database for Super Mega Baseball 4.</p>
+                    </a>
+                    <!-- Add more project cards by copying the <a class="project-card"> block above -->
+                </div>
+            </div>
+        </section>
 
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-        });
+        <!-- ===== SECTION 3: PHOTOGRAPHY ===== -->
+        <section class="site-section photography-section" id="photography-section">
+            <div class="section-inner">
+                <p class="section-title">Photography</p>
+                <div class="photo-grid">
+                    <!-- Replace each placeholder with <img src="..." alt="..."> once you have images picked out -->
+                     <img src="/resources/images/DSCN1281.JPG" alt="">
+                     <img src="/resources/images/DSCN3191.JPG" alt="">
+                     <img src="/resources/images/DSCN3283.jpg" alt="">
+                     <img src="/resources/images/DSCN3817.JPG" alt="">
+                     <img src="/resources/images/DSCN5872.JPG" alt="">
+                     <img src="/resources/images/DSCN7129.jpg" alt="">
+                </div>
+                <a class="instagram-link" href="https://www.instagram.com/sfitzphotos/" target="_blank">See more on Instagram &rarr;</a>
+            </div>
+        </section>
 
-        // Check for saved theme preference or respect OS setting
-        const savedTheme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        if (savedTheme) {
-            html.setAttribute('data-theme', savedTheme);
-        } else if (prefersDark) {
-            html.setAttribute('data-theme', 'dark');
-        }
-
-    </script>
-
+    </main>
+    <script src="/resources/theme.js"></script>
 </body>
-
 </html>

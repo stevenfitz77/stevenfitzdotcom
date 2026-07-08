@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title — Steven Fitzgerald</title>
+    <link rel="stylesheet" href="/resources/styles.css">
+    <script src="https://kit.fontawesome.com/55747b442a.js" crossorigin="anonymous"></script>
+    <script>
+        (function () {
+            var stored = null;
+            try { stored = localStorage.getItem('theme'); } catch (e) {}
+            var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="navbar-inner">
+            <a href="/index.html" class="navbar-logo">Steven Fitzgerald</a>
+            <nav class="navbar-links">
+                <a href="/index.html#projects-section">Projects</a>
+                <a href="/index.html#photography-section">Photography</a>
+                <button class="theme-toggle" aria-label="Switch to dark mode"><i class="fa-solid fa-moon"></i></button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="project-page">
+        <div class="project-page-inner">
+
+            <a class="back-link" href="/index.html#projects-section">&larr; Back to projects</a>
+
+            <header class="project-header">
+                <p class="section-title">Project</p>
+                <h1 class="project-page-title">Super Mega Database</h1>
+                <p class="project-page-tagline">Fullstack searchable and sortable database for Super Mega Baseball 4.</p>
+
+                <div class="project-meta">
+                    <div class="project-meta-item">
+                        <p class="contact-label">Role</p>
+                        <p>Solo project</p>
+                    </div>
+                    <div class="project-meta-item">
+                        <p class="contact-label">Stack</p>
+                        <p>React/Vite, FastAPI, PostgreSQL, SQLAlchemy</p>
+                    </div>
+                    <div class="project-meta-item">
+                        <p class="contact-label">Links</p>
+                        <p>
+                            <a href="https://github.com/stevenfitz77" target="_blank">Live site</a> &middot;
+                            <a href="https://github.com/stevenfitz77/smb4-database" target="_blank">Source</a>
+                        </p>
+                    </div>
+                </div>
+            </header>
+
+            <img class="project-hero-image" src="/resources/images/smb4-db-screenshot.png" alt="">
+
+            <article class="project-body">
+                <section class="project-body-section">
+                    <h2>Overview</h2>
+                    <p class="intro">This serves as a helpful tool for completing in-game drafts. Having participated
+                        in online leagues for the game before, I'm aware of a desire for this kind of database that users
+                        can reference. I've been able to receive real user feedback and bug reports since launching, 
+                        helping me get it refined.
+                    </p>
+                </section>
+
+                <section class="project-body-section">
+                    <h2>What went into it</h2>
+                    <p class="intro">React was chosen over alternatives like plain html/js because the site needed to be interactive
+                        (player search, sortable tables, filtering) without constant full page reloads. Vite made production and testing
+                        much easier with its local dev server.
+                        I went with FastAPI over Node/Express because of the interactive API docs it generates. Testing the API before
+                        having to worry about the frontend allowed me to focus on one thing at a time.
+                        This was my first time working with SQL, so I learned the importance of ORMs, allowing me to define database tables
+                        in python classes rather than writing raw SQL. SQLAlchemy was the ORM I used.
+                        I chose to use PostgreSQL because the data being handled is all relational. Players belong to teams, traits belong to players, etc.
+                        Alembic was used to track changes to the database as migration files.
+                        The database is hosted on Neon, the frontend on Vercel, and the backend on Render.
+                    </p>
+                </section>
+
+                <section class="project-body-section">
+                    <h2>Future Outlook</h2>
+                    <p class="intro">I'd like to add a login system and several user-specific features, like the ability to upload custom teams/players.</p>
+                </section>
+            </article>
+
+            <a class="back-link back-link-bottom" href="/index.html#projects-section">&larr; Back to projects</a>
+
+        </div>
+    </main>
+    <script src="/resources/theme.js"></script>
+</body>
+</html>
