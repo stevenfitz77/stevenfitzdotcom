@@ -13,7 +13,7 @@
     --border-soft: rgba(240, 90, 0, 0.15);
 }
 [data-theme="dark"] {
-    --bg: #1c140d;
+    /*--bg: #1c140d;
     --bg-rgb: 28, 20, 13;
     --text: #f5ece0;
     --text-light: #c9b8a6;
@@ -22,7 +22,19 @@
     --accent-light: #241a12;
     --accent-dark: #ffb385;
     --card-bg: #3a2a1a;
-    --border-soft: rgba(255, 154, 87, 0.2);
+    --border-soft: rgba(255, 154, 87, 0.2);*/
+
+    
+    --bg: #0d1c15;
+    --bg-rgb: 13, 28, 21;
+    --text: #f5ece0;
+    --text-light: #a6c9ac;
+    --accent: #031b0e;
+    /*--accent-hover: #16703f;*/
+    --accent-light: #063019;
+    --accent-dark: #85ffaa;
+    --card-bg: #275539;
+    --border-soft: rgba(87, 255, 101, 0.2);
 }
 
 html {
@@ -241,6 +253,21 @@ body {
     color: var(--accent);
     border-color: var(--accent);
     text-decoration: none;
+}
+
+.contact-icons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.contact-icons a {
+    color: var(--text);
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-bottom: none; /* override the underline style used for text links */
+}
+.contact-icons a:hover {
+    color: var(--accent);
 }
 
 @media (max-width: 1099px) {
