@@ -270,10 +270,12 @@ body {
     display: flex;
     gap: 1rem;
     align-items: center;
+    justify-content: flex-end;
+    margin-top: 0.4rem;
 }
 .contact-icons a {
     color: var(--text);
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     text-decoration: none;
     border-bottom: none; /* override the underline style used for text links */
 }

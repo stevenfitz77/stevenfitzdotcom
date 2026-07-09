@@ -62,13 +62,13 @@
             <article class="project-body">
                 <section class="project-body-section">
                     <h2>Overview</h2>
-                    <p class="intro">This webapp holds a permanent database of every stock team and player in the Metalhead game Super Mega Baseball 4. Users can filter, sort, and search through provided tables to find exactly which player would fit their team best.
+                    <p class="intro">A full-stack web app cataloging every stock team and player in <i>Super Mega Baseball 4</i>. Users can search, filter, and sort to find exactly which players would fit their team best. In a game that depends on community-led leagues, this is a helpful tool for any player.
                     </p>
                 </section>
 
                 <section class="project-body-section">
                     <h2>What went into it</h2>
-                    <p class="intro">React was chosen over alternatives like plain html/js because the site needed to be interactive
+                    <p class="intro"><!--React was chosen over alternatives like plain html/js because the site needed to be interactive
                         (player search, sortable tables, filtering) without constant full page reloads. Vite made production and testing
                         much easier with its local dev server.
                         I went with FastAPI over Node/Express because of the interactive API docs it generates. Testing the API before
@@ -77,7 +77,24 @@
                         in python classes rather than writing raw SQL. SQLAlchemy was the ORM I used.
                         I chose to use PostgreSQL because the data being handled is all relational. Players belong to teams, traits belong to players, etc.
                         Alembic was used to track changes to the database as migration files.
-                        The database is hosted on Neon, the frontend on Vercel, and the backend on Render.
+                        The database is hosted on Neon, the frontend on Vercel, and the backend on Render.-->
+                    
+                        I used this project as an opportunity to gain proficiency in SQL as I explore career opportunities in data and analytics. The database is made up of two seaparate tables - <strong>teams</strong> and <strong>players</strong>, connected by a foreign key.
+                        That foreign key had to be made nullable to eventually add free agents, so I immediately recognized the need to make deliberate design choices on which keys should be nullable. There were times I changed my mind about these choices, and needed to
+                        make schema changes after real data had already been entered. I learned to use <i>Alembic</i>, a migration tool that tracks structural database changes as versioned, reversible files, which made late changes much simpler and less dangerous for
+                        existing data.
+                        <br>
+                        <br>
+                        Most of my schema work went through <strong>SQLAlchemy</strong>, which let me define tables as Python classes instead of writing raw SQL for each change. It was a good way to get comfortable with relational concepts without needing to be fluent in SQL 
+                        syntax. When it came to transforming the data sitting in those table, like splitting <strong>name</strong> into <strong>first_name</strong> and <strong>last_name</strong>, I wrote a bit of raw SQL inside the migration file itself. Using <code>SELECT</code> to pull existing 
+                        values, then <code>UPDATE</code> to re-enter the names, split by spaces. That gave me great insight into the convenience of an ORM vs the control of raw SQL.
+                        <br>
+                        <br>
+                        Working with <strong>PostgreSQL</strong> directly, via Neon's SQL editor, was great for fine-tuning. Sometimes there would be a typo on a single or a few values, and fixing those as direct, one-off SQL statements taught me more about the actual query syntax than working 
+                        with an ORM could. I also learned where JSON columns can be helpful (short, player-specific lists like traits or pitch types) versus a typical many-to-many relational setup.
+                        <br>
+                        <br>
+                        DB Host: Neon   |   Backend Host: Render    |   Frontend Host: Vercel
                     </p>
                 </section>
 
